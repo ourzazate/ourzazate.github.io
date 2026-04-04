@@ -1,99 +1,151 @@
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f8f5f2;
+/* Importation de polices élégantes */
+@import url('https://googleapis.com');
+
+:root {
+    --ocre-royal: #bc6c25;    /* Couleur des Kasbahs au soleil */
+    --sable-chaud: #dda15e;   /* Couleur des dunes */
+    --terre-cuite: #603808;   /* Pour les textes profonds */
+    --fond-creme: #fefae0;    /* Pour éviter le blanc pur trop agressif */
+    --vert-palmier: #283618;  /* Rappel des Oasis */
 }
 
-/* Header */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--fond-creme);
+    color: var(--terre-cuite);
+    scroll-behavior: smooth;
+}
+
+/* Header Immersif */
 header {
-    background: #1f2937;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://unsplash.com');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: white;
     text-align: center;
-    padding: 30px;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%); /* Découpe pro en bas */
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin: 0;
+    letter-spacing: 4px;
+    text-shadow: 3px 3px 15px rgba(0,0,0,0.5);
+}
+
+nav {
+    margin-top: 20px;
 }
 
 nav a {
-    margin: 0 10px;
-    color: #fbbf24;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: white;
-}
-
-/* Hero */
-.hero {
-    background: #eab308;
-    text-align: center;
-    padding: 40px;
-    color: white;
-}
-
-/* Sections */
-.section {
-    padding: 40px;
-    text-align: center;
-}
-
-/* Cards layout FIXED */
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-/* Cards */
-.card {
-    width: 280px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    overflow: hidden;
+    margin: 0 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-bottom: 2px solid transparent;
     transition: 0.3s;
 }
 
+nav a:hover {
+    border-bottom: 2px solid var(--sable-chaud);
+}
+
+/* Cartes Professionnelles (Grid) */
+.section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--ocre-royal);
+    margin-bottom: 50px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background: white;
+    border-radius: 0; /* Garder des angles droits pour un look "forteresse" */
+    overflow: hidden;
+    box-shadow: 20px 20px 0px var(--sable-chaud); /* Ombre décalée très moderne */
+    transition: 0.4s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
 .card:hover {
-    transform: translateY(-5px);
+    transform: translate(-10px, -10px);
+    box-shadow: 30px 30px 0px var(--ocre-royal);
 }
 
 .card img {
     width: 100%;
-    height: 180px;
+    height: 250px;
     object-fit: cover;
+    transition: 0.5s;
 }
 
-/* Table */
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 25px;
+    text-align: left;
+}
+
+.card h3 {
+    margin: 0 0 10px 0;
+    color: var(--ocre-royal);
+}
+
+/* Tableau d'infos stylisé */
 table {
-    margin: auto;
-    width: 60%;
-    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
     background: white;
+    border-collapse: collapse;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
 th {
-    background: #eab308;
+    background-color: var(--ocre-royal);
     color: white;
+    padding: 20px;
+    text-align: left;
 }
 
-td, th {
-    padding: 10px;
-    border: 1px solid #ddd;
+td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
 }
 
-/* Contact */
-.contact {
-    background: #fbbf24;
-    padding: 30px;
-    text-align: center;
-}
-
-/* Footer */
+/* Footer sombre */
 footer {
-    background: #1f2937;
-    color: white;
+    background-color: var(--vert-palmier);
+    color: var(--fond-creme);
+    padding: 40px;
     text-align: center;
-    padding: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 { font-size: 2.5rem; }
+    .grid { gap: 60px; } /* Plus d'espace pour les ombres sur mobile */
 }
