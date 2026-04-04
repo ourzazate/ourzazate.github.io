@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ouarzazate | Destination Magique 🌵</title>
+    <title>Ouarzazate | La Magie du Désert ☀️</title>
     <style>
         @import url('https://googleapis.com');
 
@@ -13,6 +13,7 @@
             --soleil: #f4a261;
             --vert: #2a9d8f;
             --fond: #fefae0;
+            --blanc: #ffffff;
         }
 
         body {
@@ -22,73 +23,102 @@
             background-image: url("https://transparenttextures.com");
             color: #333;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        /* --- STICKERS DÉCORATIFS (FLOTTANTS) --- */
+        /* --- STICKERS CUTE & ANIMÉS --- */
         .sticker {
             position: absolute;
-            font-size: 3rem;
-            z-index: 0;
-            opacity: 0.6;
-            pointer-events: none;
-            filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.1));
+            font-size: 3.5rem;
+            z-index: 10;
+            filter: drop-shadow(3px 3px 10px rgba(0,0,0,0.1));
+            animation: float 4s ease-in-out infinite;
         }
-        .s1 { top: 15%; left: 5%; transform: rotate(-15deg); }
-        .s2 { top: 40%; right: 5%; transform: rotate(20deg); }
-        .s3 { top: 70%; left: 8%; transform: rotate(-10deg); }
-        .s4 { top: 85%; right: 10%; transform: rotate(15deg); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        .s1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .s2 { top: 45%; right: 5%; animation-delay: 1s; }
+        .s3 { top: 80%; left: 8%; animation-delay: 2s; }
+        .s4 { top: 15%; right: 10%; font-size: 4rem; }
 
-        /* --- HEADER --- */
+        /* --- HEADER ÉBLOUISSANT --- */
         header {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                         url('https://unsplash.com');
-            background-size: cover; background-position: center;
-            height: 65vh; display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            color: white; text-align: center; border-bottom: 8px solid var(--ocre);
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            border-bottom: 10px solid var(--ocre);
         }
 
         header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 10vw, 6rem);
-            margin: 0; text-shadow: 3px 3px 15px rgba(0,0,0,0.4);
+            font-size: clamp(3.5rem, 12vw, 7rem);
+            margin: 0;
+            text-shadow: 4px 4px 20px rgba(0,0,0,0.6);
+            letter-spacing: 5px;
         }
 
-        nav { margin-top: 30px; }
+        header p { font-size: 1.5rem; font-weight: 300; background: rgba(0,0,0,0.2); padding: 5px 20px; border-radius: 50px; }
+
+        /* --- NAVIGATION --- */
+        nav { margin-top: 40px; }
         nav a {
             color: white; text-decoration: none; margin: 0 15px;
-            background: rgba(255,255,255,0.2); padding: 10px 20px;
+            background: var(--ocre); padding: 12px 25px;
             border-radius: 50px; font-weight: bold; transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
-        nav a:hover { background: var(--ocre); }
+        nav a:hover { background: var(--soleil); transform: scale(1.1); }
 
         /* --- SECTIONS --- */
-        .section { padding: 80px 10%; position: relative; z-index: 1; text-align: center; }
-        .section h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--ocre); }
+        .section { padding: 100px 10%; position: relative; z-index: 5; text-align: center; }
+        .section h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--ocre); margin-bottom: 50px; }
 
-        /* --- CARDS --- */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        /* --- GRILLE DE CARTES --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; }
         
         .card {
-            background: white; border-radius: 25px; overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: 0.4s;
-            border: 2px solid var(--sable);
+            background: var(--blanc);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: 0.5s;
+            border: 3px solid var(--sable);
         }
-        .card:hover { transform: translateY(-15px) rotate(1deg); }
-        .card img { width: 100%; height: 250px; object-fit: cover; }
-        .card-body { padding: 25px; text-align: left; }
-        .card h3 { color: var(--ocre); margin-top: 0; }
+        .card:hover { transform: translateY(-20px); box-shadow: 0 30px 60px rgba(188, 108, 37, 0.3); }
 
-        /* --- INFO BOX CUTE --- */
-        .info-box {
-            background: white; border-radius: 30px; padding: 40px;
-            box-shadow: 10px 10px 0px var(--sable); border: 2px solid var(--ocre);
-            max-width: 800px; margin: 0 auto;
+        /* IMAGES GARANTIES (Lien direct Unsplash) */
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 5px solid var(--ocre);
         }
-        .info-row { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px dashed var(--sable); }
-        .info-row:last-child { border: none; }
 
-        footer { background: var(--ocre); color: white; padding: 60px; text-align: center; }
+        .card-body { padding: 30px; text-align: left; }
+        .card h3 { color: var(--ocre); font-size: 1.8rem; margin: 0 0 15px 0; }
+        .card p { font-size: 1rem; color: #555; line-height: 1.8; }
+
+        /* --- INFO BOX ENRICHIE --- */
+        .info-card {
+            background: white; border-radius: 40px; padding: 50px;
+            border: 4px solid var(--ocre); max-width: 900px; margin: 0 auto;
+            box-shadow: 15px 15px 0px var(--sable);
+        }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+        .info-item { padding: 20px; border-radius: 20px; background: var(--fond); }
+        .info-item b { display: block; color: var(--ocre); font-size: 1.2rem; margin-bottom: 10px; }
+
+        footer { background: var(--ocre); color: white; padding: 80px 20px; text-align: center; margin-top: 50px; }
     </style>
 </head>
 <body>
@@ -100,68 +130,69 @@
     <div class="sticker s4">🐪</div>
 
     <header>
-        <h1>Ouarzazate</h1>
-        <p>Le Sud Marocain en Couleurs ☀️</p>
+        <h1>OUARZAZATE</h1>
+        <p>Le Joyau Ocre du Sud Marocain 🇲🇦</p>
         <nav>
-            <a href="#patrimoine">Sites 🏰</a>
-            <a href="#nature">Nature 🌿</a>
-            <a href="#infos">Guide 📜</a>
+            <a href="#patrimoine">Patrimoine 🏰</a>
+            <a href="#cinema">Cinéma 🎥</a>
+            <a href="#guide">Guide 🐫</a>
         </nav>
     </header>
 
     <section id="patrimoine" class="section">
-        <h2>Trésors Historiques</h2>
+        <h2>Héritage Millénaire</h2>
         <div class="grid">
             <div class="card">
-                <img src="https://unsplash.com" alt="Ksar">
+                <img src="https://unsplash.com" alt="Ksar Ait Ben Haddou">
                 <div class="card-body">
-                    <h3>Aït Ben Haddou 🏰</h3>
-                    <p>Un ksar féerique classé à l'UNESCO. Ses tours en terre rouge semblent sortir d'un rêve berbère.</p>
+                    <h3>Aït Ben Haddou (UNESCO)</h3>
+                    <p>Ce ksar de terre rouge est une merveille d'architecture berbère. Ses tours crénelées racontent l'histoire des anciennes caravanes de l'or.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://unsplash.com" alt="Kasbah">
+                <img src="https://unsplash.com" alt="Kasbah Taourirt">
                 <div class="card-body">
-                    <h3>Kasbah de Taourirt 🧱</h3>
-                    <p>L'ancienne demeure du Glaoui, un véritable labyrinthe décoré de motifs géométriques sublimes.</p>
+                    <h3>Kasbah de Taourirt</h3>
+                    <p>Ancienne demeure du Pacha, c'est un labyrinthe de 300 chambres ornées de motifs géométriques en stuc et bois de cèdre sculpté.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="nature" class="section">
-        <h2>Nature & Désert 🌵</h2>
+    <section id="cinema" class="section">
+        <h2>Le Hollywood de l'Afrique 🎬</h2>
         <div class="grid">
             <div class="card">
-                <img src="https://unsplash.com" alt="Desert">
+                <img src="https://unsplash.com" alt="Studios Atlas">
                 <div class="card-body">
-                    <h3>Dunes de Sable 🏜️</h3>
-                    <p>Le point de départ idéal pour explorer les portes du Sahara et admirer les couchers de soleil dorés.</p>
+                    <h3>Atlas Corporation Studios</h3>
+                    <p>Découvrez les décors originaux de <i>Gladiator</i>, <i>Kingdom of Heaven</i> et <i>La Momie</i> dans les plus grands studios du monde.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://unsplash.com" alt="Oasis">
+                <img src="https://unsplash.com" alt="Oasis de Fint">
                 <div class="card-body">
                     <h3>Oasis de Fint 🌴</h3>
-                    <p>Un jardin caché au milieu des montagnes rocheuses, où les fleurs et les palmiers dansent au bord de l'eau.</p>
+                    <p>À quelques kilomètres, cette oasis luxuriante est un paradis vert caché au milieu des roches noires volcaniques.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="infos" class="section">
-        <div class="info-box">
-            <h2>Guide du Voyageur 🌺</h2>
-            <div class="info-row"><span>✈️ Arrivée</span><strong>Aéroport de Ouarzazate</strong></div>
-            <div class="info-row"><span>🌡️ Climat</span><strong>300 jours de soleil / an</strong></div>
-            <div class="info-row"><span>🎥 Cinéma</span><strong>Gladiator, Kingdom of Heaven</strong></div>
-            <div class="info-row"><span>🫖 Accueil</span><strong>Thé à la menthe offert partout !</strong></div>
+    <section id="guide" class="section">
+        <div class="info-card">
+            <h2>Préparer votre Voyage 🌸</h2>
+            <div class="info-grid">
+                <div class="info-item"><b>✈️ Accès</b>Vols directs ou 4h de route depuis Marrakech par le col du Tichka.</div>
+                <div class="info-item"><b>🌡️ Climat</b>Chaud en été, frais en hiver. Les nuits étoilées y sont légendaires !</div>
+                <div class="info-item"><b>🗣️ Accueil</b>L'hospitalité berbère vous attend avec le traditionnel thé à la menthe.</div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>✧ Fait avec amour pour Ouarzazate ✧</p>
-        <p>© 2026 - Destination Magique</p>
+        <p>✧ Explorez la Magie du Sahara ✧</p>
+        <p>© 2026 - Ouarzazate Destination | https://github.io</p>
     </footer>
 
 </body>
