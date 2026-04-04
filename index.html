@@ -6,23 +6,25 @@
     <title>Ouarzazate Guide Crew | Officiel 🌵☀️</title>
     <style>
         :root { --ocre: #bc6c25; --safran: #f4a261; --fond: #fefae0; }
-        body { margin: 0; font-family: sans-serif; background: var(--fond); color: #333; text-align: center; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--fond); color: #333; text-align: center; }
 
+        /* Stickers décoratifs */
         .sticker { position: absolute; font-size: 3rem; z-index: 10; animation: float 5s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        .s1 { top: 5%; left: 2%; } .s2 { top: 30%; right: 2%; }
+        .s1 { top: 5%; left: 5%; } .s2 { top: 35%; right: 5%; }
 
         header { 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://unsplash.com');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://i.ibb.co/Nd8Rvhf6/kasbah-ouarzazate.jpg');
             height: 50vh; background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; border-bottom: 8px solid var(--ocre);
         }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 40px 5%; }
-        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 1px solid var(--safran); }
-        .card img { width: 100%; height: 200px; object-fit: cover; }
-        .card-body { padding: 15px; text-align: left; }
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border: 1px solid var(--safran); }
+        .card img { width: 100%; height: 220px; object-fit: cover; }
+        .card-body { padding: 20px; text-align: left; }
         
-        footer { background: var(--ocre); color: white; padding: 40px 20px; margin-top: 20px; }
+        footer { background: var(--ocre); color: white; padding: 50px 20px; }
+        .btn-contact { background: white; color: var(--ocre); padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px; }
     </style>
 </head>
 <body>
@@ -31,43 +33,47 @@
     <div class="sticker s2">☀️</div>
 
     <header>
-        <div style="background:var(--ocre); padding:5px 15px; border-radius:50px; font-size:0.8rem; margin-bottom:10px; font-weight:bold;">🛡️ OUARZAZATE GUIDE CREW</div>
-        <h1 style="font-size:3rem; margin:0;">Ouarzazate</h1>
+        <div style="background:var(--ocre); padding:6px 18px; border-radius:50px; font-size:0.8rem; margin-bottom:10px; font-weight:bold; letter-spacing: 1px;">🛡️ OUARZAZATE GUIDE CREW</div>
+        <h1 style="font-size:3.5rem; margin:0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);">Ouarzazate</h1>
     </header>
 
     <section>
         <div class="grid">
+            <!-- CARTE 1 : KASBAH -->
             <div class="card">
-                <!-- Image de Ait Ben Haddou -->
-                <img src="https://unsplash.com" alt="Kasbah">
+                <img src="https://i.ibb.co/Nd8Rvhf6/kasbah-ouarzazate.jpg" alt="Kasbah Ouarzazate">
                 <div class="card-body">
-                    <h3>Héritage 🏰</h3>
-                    <p>Découvrez la Kasbah de Taourirt et Aït Ben Haddou avec notre Crew.</p>
+                    <h3 style="color:var(--ocre); margin-top:0;">Héritage 🏰</h3>
+                    <p>Explorez la majestueuse Kasbah de Taourirt avec nos guides locaux passionnés.</p>
                 </div>
             </div>
+
+            <!-- CARTE 2 : STUDIO -->
             <div class="card">
-                <!-- Image de Studio Cinéma -->
-                <img src="https://unsplash.com" alt="Cinéma">
+                <img src="https://i.ibb.co/wFMLx1xq/Atlas-entrance.jpg" alt="Atlas Studios">
                 <div class="card-body">
-                    <h3>Cinéma 🎬</h3>
-                    <p>Visitez les décors de Gladiator dans les plus grands studios du monde.</p>
+                    <h3 style="color:var(--ocre); margin-top:0;">Cinéma 🎬</h3>
+                    <p>Entrez dans les coulisses de vos films préférés aux Studios Atlas.</p>
                 </div>
             </div>
+
+            <!-- CARTE 3 : PLAT -->
             <div class="card">
-                <!-- Image de Tajine -->
-                <img src="https://unsplash.com" alt="Cuisine">
+                <img src="https://i.ibb.co/yFDpbWJr/Moroccan-Tagine.jpg" alt="Tagine Marocain">
                 <div class="card-body">
-                    <h3>Saveurs 🍲</h3>
-                    <p>Le meilleur de la cuisine marocaine authentique au cœur du désert.</p>
+                    <h3 style="color:var(--ocre); margin-top:0;">Saveurs 🍲</h3>
+                    <p>Savourez un tajine authentique préparé selon les traditions du désert.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <h2 style="margin-top:0;">Contactez la Crew 🐫</h2>
-        <p>📞 +212 6 12 34 56 78</p>
-        <p>📱 Instagram : @OuarzazateGuide</p>
+        <h2 style="margin-top:0;">Prêt pour l'aventure ? 🐫</h2>
+        <p>Contactez la Crew pour une visite inoubliable.</p>
+        <p>📞 <strong>+212 6 12 34 56 78</strong></p>
+        <a href="https://wa.me" class="btn-contact">Réserver via WhatsApp</a>
+        <p style="font-size: 0.8rem; margin-top: 30px; opacity: 0.8;">© 2026 Ouarzazate Guide Crew - Tous droits réservés</p>
     </footer>
 
 </body>
