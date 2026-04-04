@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ouarzazate Guide Crew | Officiel 🌵</title>
+    <title>Ouarzazate Guide Crew | Officiel 🌵☀️</title>
     <style>
         @import url('https://googleapis.com');
 
@@ -15,137 +15,169 @@
             --terre: #603808;
         }
 
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--fond);
+        * { box-sizing: border-box; }
+        body { 
+            margin: 0; font-family: 'Montserrat', sans-serif; 
+            background: var(--fond); color: var(--terre); 
+            line-height: 1.8; overflow-x: hidden;
+            /* PATTERN BERBÈRE CRÉATIF */
             background-image: url("https://transparenttextures.com");
-            color: var(--terre);
-            line-height: 1.7;
-            overflow-x: hidden;
         }
 
-        /* --- STICKERS CUTE --- */
+        /* --- STICKERS ANIMÉS CRÉATIFS --- */
         .sticker {
-            position: absolute;
-            font-size: 3.5rem;
-            z-index: 10;
-            filter: drop-shadow(3px 3px 10px rgba(0,0,0,0.1));
-            animation: float 4s ease-in-out infinite;
+            position: absolute; font-size: 4.5rem; z-index: 10;
+            filter: drop-shadow(5px 5px 15px rgba(0,0,0,0.1));
+            animation: float 6s ease-in-out infinite;
         }
         @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(8deg); }
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            50% { transform: translateY(-30px) rotate(15deg) scale(1.1); }
         }
-        .s1 { top: 10%; left: 5%; }
-        .s2 { top: 45%; right: 5%; animation-delay: 1s; }
-        .s3 { top: 80%; left: 5%; animation-delay: 2s; }
+        .s1 { top: 10%; left: 3%; animation-delay: 0s; }   /* Cactus 🌵 */
+        .s2 { top: 40%; right: 4%; animation-delay: 1s; }  /* Soleil ☀️ */
+        .s3 { top: 75%; left: 4%; animation-delay: 2s; }   /* Fleur 🌸 */
 
-        /* --- HEADER --- */
+        /* --- HEADER PROFESSIONNEL --- */
         header {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                         url('https://unsplash.com');
-            background-size: cover; background-position: center;
-            height: 60vh; display: flex; flex-direction: column;
+            background-size: cover; background-position: center; background-attachment: fixed; /* Effet Parallaxe */
+            height: 80vh; display: flex; flex-direction: column;
             justify-content: center; align-items: center; color: white; text-align: center;
-            border-bottom: 8px solid var(--ocre);
+            border-bottom: 12px solid var(--ocre);
         }
 
-        .crew-tag { font-weight: bold; letter-spacing: 2px; text-transform: uppercase; background: var(--ocre); padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; margin-bottom: 20px; }
-
-        header h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 10vw, 6rem); margin: 0; }
-
-        /* --- SECTIONS --- */
-        .section { padding: 80px 10%; text-align: center; border-bottom: 1px dashed var(--safran); }
-        .section h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--ocre); }
-
-        /* --- CARTES --- */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid var(--safran); transition: 0.3s; }
-        .card:hover { transform: translateY(-10px); }
-        .card img { width: 100%; height: 280px; object-fit: cover; border-bottom: 4px solid var(--ocre); }
-        .card-body { padding: 25px; text-align: left; }
-
-        /* --- CONTACT BOX --- */
-        .contact-card {
-            background: white; border-radius: 20px; padding: 40px;
-            border-left: 10px solid var(--vert); max-width: 800px; margin: 40px auto;
-            box-shadow: 10px 10px 0px var(--safran); text-align: left;
+        .crew-badge { 
+            background: var(--ocre); color: white; padding: 10px 25px; 
+            border-radius: 50px; font-weight: bold; text-transform: uppercase; 
+            font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border: 2px solid var(--safran);
         }
+
+        header h1 { font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 12vw, 7rem); margin: 0; text-shadow: 4px 4px 20px rgba(0,0,0,0.6); }
+
+        /* --- SECTIONS DU GUIDE --- */
+        .section { padding: 100px 10%; border-bottom: 3px solid var(--safran); position: relative; z-index: 5; text-align: center; }
+        .section h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--ocre); margin-bottom: 60px; }
+
+        /* --- GRID ET CARTES "BOUTIQUE" --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; }
+        
+        .card { 
+            background: white; border-radius: 40px; overflow: hidden; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1); transition: 0.5s; 
+            border: 4px solid var(--safran); text-align: left;
+        }
+        .card:hover { transform: translateY(-20px) rotate(1deg); box-shadow: 0 30px 60px rgba(188, 108, 37, 0.3); }
+        
+        .card img { 
+            width: 100%; height: 320px; object-fit: cover; display: block; 
+            border-bottom: 8px solid var(--ocre); 
+            transition: 0.5s;
+        }
+        .card:hover img { filter: saturate(1.2); }
+
+        .card-body { padding: 35px; }
+        .card h3 { color: var(--ocre); font-family: 'Playfair Display', serif; font-size: 2rem; margin: 0 0 15px 0; }
+
+        /* --- BLOC CONTACT & RÉSEAUX --- */
+        .contact-box {
+            background: white; border-radius: 50px; padding: 60px;
+            border-left: 20px solid var(--vert); max-width: 950px; margin: 0 auto;
+            box-shadow: 20px 20px 0px var(--safran); text-align: left;
+        }
+        .social-links a { 
+            display: inline-block; margin-right: 20px; color: var(--ocre); 
+            text-decoration: none; font-weight: bold; font-size: 1.1rem;
+            padding: 10px 20px; border: 2px solid var(--safran); border-radius: 50px;
+            transition: 0.3s;
+        }
+        .social-links a:hover { background: var(--vert); color: white; border-color: var(--vert); }
 
         /* --- FOOTER --- */
-        footer { background: var(--terre); color: white; padding: 60px 20px; text-align: center; }
-        .socials a { color: var(--safran); text-decoration: none; margin: 0 10px; font-weight: bold; }
+        footer { background: var(--terre); color: var(--fond); padding: 100px 20px; text-align: center; }
     </style>
 </head>
 <body>
 
+    <!-- STICKERS MAGIQUES QUI BOUGENT -->
     <div class="sticker s1">🌵</div>
     <div class="sticker s2">☀️</div>
     <div class="sticker s3">🌸</div>
 
     <header>
-        <div class="crew-tag">🛡️ Ouarzazate Guide Crew</div>
+        <div class="crew-badge">🛡️ Ouarzazate Guide Crew</div>
         <h1>OUARZAZATE</h1>
-        <p>Le Guide Authentique du Sud Marocain</p>
+        <p style="font-size: 1.4rem; font-style: italic;">L'épopée d'une cité ocre entre Atlas et Sahara</p>
     </header>
 
+    <!-- SECTION PATRIMOINE -->
     <section class="section">
-        <h2>Patrimoine & Architecture 🏰</h2>
+        <h2>Héritage Millénaire 🏰</h2>
         <div class="grid">
             <div class="card">
+                <!-- PHOTO KASBAH TAOURIRT -->
                 <img src="https://unsplash.com" alt="Kasbah Taourirt">
                 <div class="card-body">
                     <h3>Kasbah de Taourirt</h3>
-                    <p>Ancien palais du 17ème siècle, symbole de la puissance des Glaoui. Un labyrinthe de 300 chambres richement décorées.</p>
+                    <p>Découvrez ce labyrinthe du XVIIe siècle, joyau de l'architecture berbère avec ses 300 chambres ornées de bois de cèdre sculpté.</p>
                 </div>
             </div>
             <div class="card">
+                <!-- PHOTO AIT BEN HADDOU -->
                 <img src="https://unsplash.com" alt="Ksar Ait Ben Haddou">
                 <div class="card-body">
                     <h3>Ksar Aït Ben Haddou</h3>
-                    <p>Site classé UNESCO. Ce village fortifié en pisé est le plus célèbre du Maroc, situé à 30 min de la ville.</p>
+                    <p>Site classé à l'UNESCO. Ce village fortifié en pisé rouge est l'icône la plus majestueuse du Sud marocain.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- SECTION CINÉMA & GASTRONOMIE -->
     <section class="section">
         <h2>Cinéma & Saveurs 🎬🍲</h2>
         <div class="grid">
             <div class="card">
+                <!-- PHOTO ATLAS STUDIOS -->
                 <img src="https://unsplash.com" alt="Atlas Studios">
                 <div class="card-body">
-                    <h3>Atlas Studios</h3>
-                    <p>Découvrez les décors originaux de Gladiator et Game of Thrones au cœur des plus grands studios au monde.</p>
+                    <h3>Atlas Corporation Studios</h3>
+                    <p>Marchez dans les décors originaux de <i>Gladiator</i> et <i>Game of Thrones</i> au cœur du plus grand studio de cinéma au monde.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://unsplash.com" alt="Plat Marocain">
+                <!-- PHOTO GASTRONOMIE -->
+                <img src="https://unsplash.com" alt="Tajine Marocain">
                 <div class="card-body">
-                    <h3>Spécialités Locales</h3>
-                    <p>Goûtez au Tajine de Ouarzazate et au pain traditionnel cuit au four de terre, parfumé au safran de l'Atlas.</p>
+                    <h3>Gastronomie Authentique</h3>
+                    <p>Dégustez un tajine parfumé au safran de Taliouine, préparé avec passion par les cuisiniers de notre Crew.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- SECTION CONTACT & RÉSEAUX -->
     <section class="section">
-        <div class="contact-card">
+        <div class="contact-box">
             <h2>Contactez la Crew 🐫</h2>
-            <p><b>📍 Adresse :</b> Ouarzazate Centre, Drâa-Tafilalet</p>
+            <p><b>📍 Localisation :</b> Avenue Mohammed V, Ouarzazate</p>
             <p><b>📞 Téléphone :</b> +212 6 12 34 56 78</p>
-            <p><b>📧 Email :</b> crew@ouarzazate-guide.com</p>
-            <div class="socials">
-                <b>Suivez-nous :</b> 
-                <a href="#">Instagram</a> | <a href="#">X (Twitter)</a> | <a href="#">LinkedIn</a>
+            <p><b>📧 Expertise :</b> crew@ouarzazate-guide.com</p>
+            <div class="social-links" style="margin-top: 30px;">
+                <a href="#">Instagram</a>
+                <a href="#">X (Twitter)</a>
+                <a href="#">LinkedIn</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>🛡️ <b>Ouarzazate Guide Crew</b> - Expertise Touristique</p>
-        <p>✧ Façonné avec amour pour le Maroc ✧</p>
+        <p>🛡️ <b>Ouarzazate Guide Crew</b> - 2026</p>
+        <p>Pour plus d'informations, visitez notre plateforme officielle.</p>
+        <p style="margin-top: 20px; font-size: 1.5rem;">✦ <i>Explorez la magie avec nous</i> ✦</p>
     </footer>
 
 </body>
