@@ -4,29 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ouarzazate | La Porte du Désert</title>
-    <!-- C'est cette ligne qui active tes couleurs et ton style ! -->
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Polices de luxe : Playfair pour les titres, Montserrat pour le texte -->
+    <style>
+        @import url('https://googleapis.com');
+
+        :root {
+            --ocre: #bc6c25;       /* Couleur des Kasbahs */
+            --sable: #dda15e;      /* Couleur des dunes */
+            --terre: #603808;      /* Texte profond */
+            --fond: #fefae0;       /* Fond crème élégant */
+            --ombre: rgba(0,0,0,0.1);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--fond);
+            color: var(--terre);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* --- HEADER IMMERSIF --- */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin: 0;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        header p { font-size: 1.2rem; font-weight: 300; margin-top: 10px; }
+
+        nav { margin-top: 30px; }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+        }
+        nav a:hover { border-bottom: 2px solid var(--sable); color: var(--sable); }
+
+        /* --- SECTIONS --- */
+        .section { padding: 100px 10%; text-align: center; }
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--ocre);
+            margin-bottom: 50px;
+        }
+
+        /* --- CARTES / GRID --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: white;
+            box-shadow: 20px 20px 0px var(--sable);
+            overflow: hidden;
+            transition: 0.4s ease;
+            border: 1px solid #eee;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 25px 25px 0px var(--ocre);
+        }
+
+        .card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .card-body { padding: 30px; }
+        .card-body h3 { 
+            font-family: 'Playfair Display', serif; 
+            color: var(--ocre); 
+            margin: 0 0 15px 0; 
+            font-size: 1.6rem;
+        }
+
+        /* --- TABLEAU INFOS --- */
+        .info-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 10px 30px var(--ombre);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th { background: var(--ocre); color: white; padding: 20px; text-align: left; text-transform: uppercase; }
+        td { padding: 15px 20px; border-bottom: 1px solid #f0f0f0; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #283618;
+            color: #fefae0;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .section { padding: 60px 5%; }
+            header h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
 
 <header>
     <h1>Ouarzazate</h1>
-    <p>Découvrez la "Porte du Désert", carrefour millénaire des caravanes et terre de cinéma.</p>
+    <p>L'éclat d'une cité millénaire au carrefour du désert.</p>
     <nav>
-        <a href="#monuments">Monuments</a>
+        <a href="#monuments">Héritage</a>
         <a href="#cinema">Cinéma</a>
         <a href="#infos">Infos</a>
     </nav>
 </header>
 
 <section id="monuments" class="section">
-    <h2 class="section-title">Héritage & Architecture</h2>
+    <h2>Héritage & Kasbahs</h2>
     <div class="grid">
         <article class="card">
-            <img src="https://wikimedia.org" alt="Ksar d'Aït Ben Haddou">
+            <img src="https://wikimedia.org" alt="Aït Ben Haddou">
             <div class="card-body">
                 <h3>Ksar d'Aït Ben Haddou</h3>
-                <p>Site classé au patrimoine mondial de l'UNESCO, ce village fortifié est l'exemple parfait de l'architecture en terre.</p>
+                <p>Site classé à l'UNESCO, ce village fortifié est le joyau de l'architecture de terre marocaine.</p>
             </div>
         </article>
 
@@ -34,36 +169,48 @@
             <img src="https://wikimedia.org" alt="Kasbah de Taourirt">
             <div class="card-body">
                 <h3>Kasbah de Taourirt</h3>
-                <p>Ancienne résidence royale, cette forteresse de pisé domine la ville avec ses tours crénelées.</p>
+                <p>Ancienne demeure du Glaoui, symbole historique situé au plein cœur de la ville.</p>
             </div>
         </article>
     </div>
 </section>
 
 <section id="cinema" class="section">
-    <h2 class="section-title">Le Hollywood Marocain</h2>
+    <h2>Le Hollywood Africain</h2>
     <div class="grid">
         <article class="card">
-            <img src="https://wikimedia.org" alt="Studios Atlas">
+            <img src="https://wikimedia.org" alt="Atlas Studios">
             <div class="card-body">
                 <h3>Atlas Studios</h3>
-                <p>Visitez les décors de films légendaires comme Gladiator ou Game of Thrones.</p>
+                <p>Les plus grands studios de cinéma au monde, là où les légendes comme Gladiator prennent vie.</p>
+            </div>
+        </article>
+        
+        <article class="card">
+            <img src="https://unsplash.com" alt="Cinéma">
+            <div class="card-body">
+                <h3>Musée du Cinéma</h3>
+                <p>Une plongée immersive dans l'histoire des tournages internationaux à Ouarzazate.</p>
             </div>
         </article>
     </div>
 </section>
 
 <section id="infos" class="section">
-    <h2>Informations Pratiques</h2>
-    <table>
-        <tr><th>Altitude</th><td>1 151 mètres</td></tr>
-        <tr><td>Climat</td><td>Désertique (Meilleure période : Octobre à Avril)</td></tr>
-        <tr><td>Accès</td><td>Aéroport Ouarzazate (OZZ)</td></tr>
-    </table>
+    <h2>Guide Pratique</h2>
+    <div class="info-box">
+        <table>
+            <tr><th>Détail</th><th>Information Réelle</th></tr>
+            <tr><td>Altitude</td><td>1 151 mètres</td></tr>
+            <tr><td>Meilleure Période</td><td>Octobre à Avril (Climat tempéré)</td></tr>
+            <tr><td>Langues</td><td>Amazigh, Arabe, Français</td></tr>
+            <tr><td>Région</td><td>Drâa-Tafilalet</td></tr>
+        </table>
+    </div>
 </section>
 
 <footer>
-    <p>© 2026 Découvrir Ouarzazate - Une immersion authentique.</p>
+    <p>© 2026 Découvrir Ouarzazate - Explorez la magie du Sud Marocain</p>
 </footer>
 
 </body>
