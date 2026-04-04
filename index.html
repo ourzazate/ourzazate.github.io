@@ -1,78 +1,70 @@
-<!-- ... (Gardez votre <head> et la structure du menu) ... -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ouarzazate | La Porte du Désert</title>
+    <!-- C'est cette ligne qui active tes couleurs et ton style ! -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>Ouarzazate</h1>
-        <p>Découvrez la "Porte du Désert", carrefour millénaire des caravanes et terre de cinéma.</p>
-    </div>
-</section>
+<header>
+    <h1>Ouarzazate</h1>
+    <p>Découvrez la "Porte du Désert", carrefour millénaire des caravanes et terre de cinéma.</p>
+    <nav>
+        <a href="#monuments">Monuments</a>
+        <a href="#cinema">Cinéma</a>
+        <a href="#infos">Infos</a>
+    </nav>
+</header>
 
 <section id="monuments" class="section">
     <h2 class="section-title">Héritage & Architecture</h2>
     <div class="grid">
         <article class="card">
-            <div class="img-container">
-                <!-- Image réelle du Ksar classé UNESCO -->
-                <img src="https://wikimedia.org" alt="Ksar d'Aït Ben Haddou">
-            </div>
+            <img src="https://wikimedia.org" alt="Ksar d'Aït Ben Haddou">
             <div class="card-body">
                 <h3>Ksar d'Aït Ben Haddou</h3>
-                <p>Site classé au patrimoine mondial de l'UNESCO, ce village fortifié est l'exemple parfait de l'architecture en terre du Sud marocain.</p>
+                <p>Site classé au patrimoine mondial de l'UNESCO, ce village fortifié est l'exemple parfait de l'architecture en terre.</p>
             </div>
         </article>
 
         <article class="card">
-            <div class="img-container">
-                <!-- Image réelle de la Kasbah en centre-ville -->
-                <img src="https://wikimedia.org" alt="Kasbah de Taourirt">
-            </div>
+            <img src="https://wikimedia.org" alt="Kasbah de Taourirt">
             <div class="card-body">
                 <h3>Kasbah de Taourirt</h3>
-                <p>Ancienne résidence du Glaoui, cette forteresse de pisé domine la ville avec ses tours crénelées et ses plafonds peints.</p>
+                <p>Ancienne résidence royale, cette forteresse de pisé domine la ville avec ses tours crénelées.</p>
             </div>
         </article>
     </div>
 </section>
 
 <section id="cinema" class="section">
-    <h2>Le Hollywood de l'Afrique</h2>
+    <h2 class="section-title">Le Hollywood Marocain</h2>
     <div class="grid">
         <article class="card">
-            <div class="img-container">
-                <img src="https://wikimedia.org" alt="Studios Atlas Ouarzazate">
-            </div>
+            <img src="https://wikimedia.org" alt="Studios Atlas">
             <div class="card-body">
-                <h3>Atlas Corporation Studios</h3>
-                <p>Découvrez les décors de films cultes comme Gladiator ou Kingdom of Heaven au cœur des plus grands studios au monde.</p>
+                <h3>Atlas Studios</h3>
+                <p>Visitez les décors de films légendaires comme Gladiator ou Game of Thrones.</p>
             </div>
         </article>
     </div>
 </section>
 
-<section id="infos" class="info-section">
-    <div class="container">
-        <h2>Informations Pratiques</h2>
-        <table>
-            <thead>
-                <tr><th>Catégorie</th><th>Données Réelles</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Altitude</td><td>1 151 mètres (Haut Atlas)</td></tr>
-                <tr><td>Population</td><td>79 218 habitants (Estimation 2024)</td></tr>
-                <tr><td>Climat</td><td>Désertique chaud (Meilleure période : Octobre à Avril)</td></tr>
-                <tr><td>Accès</td><td>Aéroport Ouarzazate (OZZ) ou Route Tizi n'Tichka (4h de Marrakech)</td></tr>
-            </tbody>
-        </table>
-    </div>
+<section id="infos" class="section">
+    <h2>Informations Pratiques</h2>
+    <table>
+        <tr><th>Altitude</th><td>1 151 mètres</td></tr>
+        <tr><td>Climat</td><td>Désertique (Meilleure période : Octobre à Avril)</td></tr>
+        <tr><td>Accès</td><td>Aéroport Ouarzazate (OZZ)</td></tr>
+    </table>
 </section>
-<!-- ... (Reste du code footer) ... -->
-<script src="https://unpkg.com"></script>
-<script>
-    ScrollReveal().reveal('.card', { 
-        delay: 200, 
-        distance: '50px', 
-        origin: 'bottom', 
-        interval: 100 
-    });
-</script>
 
+<footer>
+    <p>© 2026 Découvrir Ouarzazate - Une immersion authentique.</p>
+</footer>
+
+</body>
+</html>
