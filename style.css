@@ -1,83 +1,80 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #fff3e0;
-    scroll-behavior: smooth;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f5f2;
 }
 
 /* Header */
 header {
-    background: linear-gradient(to right, #e65100, #ff9800);
+    background: #1f2937;
     color: white;
     text-align: center;
-    padding: 40px;
-}
-
-/* Nav */
-nav {
-    margin-top: 15px;
+    padding: 30px;
 }
 
 nav a {
     margin: 0 10px;
-    color: white;
+    color: #fbbf24;
     text-decoration: none;
     font-weight: bold;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: white;
 }
 
 /* Hero */
 .hero {
+    background: #eab308;
     text-align: center;
-    padding: 30px;
-    background-color: #ffe0b2;
+    padding: 40px;
+    color: white;
 }
 
 /* Sections */
 .section {
-    padding: 30px;
+    padding: 40px;
     text-align: center;
+}
+
+/* Cards layout FIXED */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 /* Cards */
 .card {
-    display: inline-block;
-    width: 260px;
-    margin: 15px;
+    width: 280px;
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
 }
 
 .card img {
     width: 100%;
-    height: 160px;
+    height: 180px;
     object-fit: cover;
-}
-
-.card p {
-    padding: 10px;
 }
 
 /* Table */
 table {
     margin: auto;
-    width: 70%;
+    width: 60%;
     border-collapse: collapse;
     background: white;
 }
 
 th {
-    background-color: #ff9800;
+    background: #eab308;
     color: white;
 }
 
@@ -86,28 +83,16 @@ td, th {
     border: 1px solid #ddd;
 }
 
-/* Map */
-.map {
-    text-align: center;
-    padding: 30px;
-}
-
-.map iframe {
-    width: 80%;
-    height: 300px;
-    border: none;
-}
-
 /* Contact */
 .contact {
-    text-align: center;
+    background: #fbbf24;
     padding: 30px;
-    background-color: #ffe0b2;
+    text-align: center;
 }
 
 /* Footer */
 footer {
-    background: #333;
+    background: #1f2937;
     color: white;
     text-align: center;
     padding: 10px;
