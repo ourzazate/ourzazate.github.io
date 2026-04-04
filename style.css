@@ -1,48 +1,52 @@
-/* Importation de polices élégantes */
+/* 1. IMPORTATION DES POLICES (CORRIGÉ) */
 @import url('https://googleapis.com');
 
+/* 2. VARIABLES DE COULEURS OUARZAZATE */
 :root {
-    --ocre-royal: #bc6c25;    /* Couleur des Kasbahs au soleil */
+    --ocre-royal: #bc6c25;    /* Couleur des Kasbahs */
     --sable-chaud: #dda15e;   /* Couleur des dunes */
-    --terre-cuite: #603808;   /* Pour les textes profonds */
-    --fond-creme: #fefae0;    /* Pour éviter le blanc pur trop agressif */
-    --vert-palmier: #283618;  /* Rappel des Oasis */
+    --terre-cuite: #603808;   /* Texte foncé */
+    --fond-creme: #fefae0;    /* Fond de page doux */
+    --vert-palmier: #283618;  /* Couleur des Oasis */
 }
 
+/* 3. STYLE GÉNÉRAL */
 body {
     margin: 0;
+    padding: 0;
     font-family: 'Montserrat', sans-serif;
     background-color: var(--fond-creme);
     color: var(--terre-cuite);
+    line-height: 1.6;
     scroll-behavior: smooth;
 }
 
-/* Header Immersif */
+/* 4. HEADER AVEC IMAGE RÉELLE */
 header {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                 url('https://unsplash.com');
     background-size: cover;
     background-position: center;
-    height: 60vh;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%); /* Découpe pro en bas */
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
 }
 
 header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
     margin: 0;
-    letter-spacing: 4px;
-    text-shadow: 3px 3px 15px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    letter-spacing: 6px;
 }
 
 nav {
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 nav a {
@@ -51,18 +55,19 @@ nav a {
     margin: 0 15px;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    border-bottom: 2px solid transparent;
+    font-size: 0.85rem;
     transition: 0.3s;
+    border-bottom: 2px solid transparent;
 }
 
 nav a:hover {
+    color: var(--sable-chaud);
     border-bottom: 2px solid var(--sable-chaud);
 }
 
-/* Cartes Professionnelles (Grid) */
+/* 5. SECTIONS & GRILLE */
 .section {
-    padding: 80px 10%;
+    padding: 100px 10%;
     text-align: center;
 }
 
@@ -71,26 +76,27 @@ nav a:hover {
     font-size: 2.5rem;
     color: var(--ocre-royal);
     margin-bottom: 50px;
+    position: relative;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
 }
 
+/* 6. CARTES PROFESSIONNELLES */
 .card {
     background: white;
-    border-radius: 0; /* Garder des angles droits pour un look "forteresse" */
+    box-shadow: 15px 15px 0px var(--sable-chaud);
+    transition: 0.4s ease-in-out;
     overflow: hidden;
-    box-shadow: 20px 20px 0px var(--sable-chaud); /* Ombre décalée très moderne */
-    transition: 0.4s ease;
     border: 1px solid rgba(0,0,0,0.05);
 }
 
 .card:hover {
     transform: translate(-10px, -10px);
-    box-shadow: 30px 30px 0px var(--ocre-royal);
+    box-shadow: 25px 25px 0px var(--ocre-royal);
 }
 
 .card img {
@@ -100,28 +106,25 @@ nav a:hover {
     transition: 0.5s;
 }
 
-.card:hover img {
-    transform: scale(1.05);
-}
-
 .card-body {
-    padding: 25px;
+    padding: 30px;
     text-align: left;
 }
 
 .card h3 {
-    margin: 0 0 10px 0;
+    margin-top: 0;
     color: var(--ocre-royal);
+    font-family: 'Playfair Display', serif;
 }
 
-/* Tableau d'infos stylisé */
+/* 7. TABLEAU D'INFOS */
 table {
     width: 100%;
     max-width: 800px;
-    margin: 30px auto;
-    background: white;
+    margin: 40px auto;
     border-collapse: collapse;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 th {
@@ -133,19 +136,13 @@ th {
 
 td {
     padding: 15px 20px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-/* Footer sombre */
+/* 8. FOOTER */
 footer {
     background-color: var(--vert-palmier);
     color: var(--fond-creme);
-    padding: 40px;
+    padding: 50px 20px;
     text-align: center;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    header h1 { font-size: 2.5rem; }
-    .grid { gap: 60px; } /* Plus d'espace pour les ombres sur mobile */
 }
