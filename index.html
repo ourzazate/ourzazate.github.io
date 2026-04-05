@@ -2,140 +2,168 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Ouarzazate Guide - Portfolio</title>
+    <title>Ouarzazate Official Guide</title>
     <style>
         :root {
-            --ocre: #CC7722; --orange: #E38928; --jaune: #FFD700;
-            --beige: #F5F5DC; --vert: #38761D; --bleu: #0077BE;
+            --ocre-vif: #D35400;
+            --jaune-soleil: #FFC300;
+            --vert-oasis: #2ECC71;
+            --bleu-atlas: #3498DB;
+            --sable: #F7DC6F;
+            --beige-fond: #FEF9E7;
         }
 
-        body { font-family: 'Comic Sans MS', 'Arial', sans-serif; background: #222; margin: 0; padding: 20px; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background: #333; margin: 0; padding: 20px; }
 
-        /* Conteneur Page A4 */
+        /* STRUCTURE PAGE A4 */
         .page {
-            width: 210mm; height: 297mm; background: var(--beige);
-            margin: 0 auto 40px auto; position: relative; padding: 40px;
-            box-sizing: border-box; overflow: hidden; display: flex; flex-direction: column;
-            border: 8px solid var(--ocre); border-radius: 15px;
+            width: 210mm; height: 297mm; background: var(--beige-fond);
+            margin: 0 auto 50px auto; position: relative; padding: 60px 40px;
+            box-sizing: border-box; display: flex; flex-direction: column;
+            border-top: 15px solid var(--ocre-vif); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* NOM DANS LE CORNER (COIN) */
-        .corner-tag {
-            position: absolute; top: 20px; right: -30px;
-            background: var(--ocre); color: white; padding: 5px 40px;
-            transform: rotate(45deg); font-weight: bold; font-size: 12px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3); z-index: 10;
+        /* NOM DANS LE COIN (DROIT ET PROPRE) */
+        .brand-corner {
+            position: absolute; top: 0; right: 40px;
+            background: var(--ocre-vif); color: white;
+            padding: 10px 20px; font-weight: bold; font-size: 14px;
+            text-transform: uppercase; letter-spacing: 1px;
         }
 
-        /* STICKERS COMIC */
-        .sticker-comic { font-size: 40px; position: absolute; filter: drop-shadow(2px 2px 0px white); }
-
-        /* TITRES DYNAMIQUES */
-        h2 { 
-            font-size: 3em; color: var(--ocre); margin: 10px 0; 
-            text-shadow: 2px 2px var(--jaune); border-bottom: 5px dashed var(--orange);
+        /* GRANDS TITRES */
+        .main-title {
+            text-align: center; margin-bottom: 30px;
+            border-bottom: 4px solid var(--jaune-soleil); padding-bottom: 10px;
+        }
+        .main-title h1 { 
+            font-size: 3.5em; color: var(--ocre-vif); margin: 0; 
+            text-transform: uppercase; display: flex; justify-content: center; align-items: center; gap: 15px;
         }
 
-        /* DISPOSITION DES PHOTOS */
-        .photo-frame { 
-            border: 8px solid white; box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
-            object-fit: cover; transition: 0.3s;
-        }
-        .tilt-left { transform: rotate(-3deg); }
-        .tilt-right { transform: rotate(3deg); }
+        /* PHOTOS STYLISÉES */
+        .photo-container { position: relative; margin: 20px 0; border: 10px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .full-img { width: 100%; height: 350px; object-fit: cover; }
+        .grid-img { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+        .grid-img img { width: 100%; height: 220px; object-fit: cover; border: 5px solid white; }
 
-        .grid-3 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
-
-        /* TEXTE */
-        .text-box { 
-            background: rgba(255,255,255,0.7); padding: 20px; 
-            border-radius: 15px; font-size: 1.2em; line-height: 1.5; color: #333;
+        /* TEXTE PROFESSIONNEL */
+        .description { font-size: 1.25em; line-height: 1.8; color: #444; text-align: justify; margin-bottom: 25px; }
+        
+        /* CONTACTS ET INFOS RÉELLES */
+        .directory-card {
+            background: white; border-left: 8px solid var(--vert-oasis);
+            padding: 20px; border-radius: 5px; margin-top: auto;
         }
+        .directory-card h3 { margin-top: 0; color: var(--vert-oasis); text-transform: uppercase; }
 
         /* FOOTER */
         .footer {
-            margin-top: auto; border-top: 3px solid var(--ocre);
-            display: flex; justify-content: space-between; align-items: flex-end;
-            padding-top: 10px; font-size: 0.9em;
+            margin-top: 30px; padding-top: 15px; border-top: 1px solid #ccc;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.9em; color: #777;
         }
     </style>
 </head>
 <body>
 
-    <!-- PAGE 1: L'AVENTURE & KASBAH -->
-    <div class="page" style="background: linear-gradient(135deg, var(--beige) 60%, var(--jaune) 100%);">
-        <div class="corner-tag">Ouarzazate Guide Crew</div>
-        <span class="sticker-comic" style="top: 100px; left: 20px;">🌵</span>
+    <!-- PAGE 1: BIENVENUE & HISTOIRE -->
+    <div class="page">
+        <div class="brand-corner">Ouarzazate Guide Crew</div>
         
-        <h2>Aït Ben Haddou 🏰</h2>
-        
-        <img src="https://i.ibb.co/CKVJPx96/A-t-Ben-Haddou-Ouarzazate-Morocco.jpg" class="photo-frame tilt-right" style="width: 100%; height: 350px;">
-
-        <div class="text-box" style="margin-top: 30px; border-left: 10px solid var(--ocre);">
-            <p>Bienvenue dans le décor de vos rêves ! La Kasbah d'Aït Ben Haddou n'est pas seulement un site de l'UNESCO, c'est un voyage dans le temps. Ses murs de terre rouge racontent l'histoire des anciennes caravanes de l'or et du sel.</p>
+        <div class="main-title">
+            <h1><span class="sticker">🏰</span> LA KASBAH ROYALE</h1>
         </div>
 
-        <div class="grid-3">
-            <img src="https://i.ibb.co/1tpHxQ7X/t-l-chargement-5.jpg" class="photo-frame" style="height: 180px;">
-            <div style="background: var(--vert); color: white; padding: 15px; border-radius: 10px;">
-                <h4 style="margin: 0;">🎬 Secret de Tournage</h4>
-                <p style="font-size: 14px;">C'est ici que Gladiator et Games of Thrones ont posé leurs caméras. Soyez la star de votre propre film !</p>
-            </div>
+        <div class="photo-container">
+            <img src="https://ibb.co" class="full-img" alt="Ait Ben Haddou">
+        </div>
+
+        <p class="description">
+            Imaginez une forteresse surgissant des sables... Aït Ben Haddou est le joyau du Sud marocain. Ce Ksar, classé à l'UNESCO, raconte l'épopée des caravanes transsahariennes. En flânant dans ses ruelles, vous marchez sur les traces des tribus berbères et des plus grands acteurs d'Hollywood.
+        </p>
+
+        <div class="grid-img">
+            <img src="https://ibb.co" alt="Kasbah Detail">
+            <img src="https://i.ibb.co/wN9YcBwC/image.jpg" alt="Route Ouarzazate">
+        </div>
+
+        <div class="directory-card">
+            <h3>📍 Guide Local Certifié</h3>
+            <strong>Association des Guides d'Aït Ben Haddou</strong><br>
+            📞 Contact : +212 5 24 89 00 11 | Adresse : Ksar Aït Ben Haddou, Ouarzazate.
         </div>
 
         <div class="footer">
-            <div><strong>IG/X/LinkedIn:</strong> @OuarzazateGuide<br><strong>WhatsApp:</strong> 06 12 34 56 78</div>
-            <div style="background: white; padding: 5px; border: 1px solid #000;">[QR CODE]</div>
+            <div>Instagram/X: @OuarzazateGuide | Tel: 06 12 34 56 78</div>
+            <div>[QR CODE SITE WEB]</div>
         </div>
     </div>
 
-    <!-- PAGE 2: ACTION & SAVEURS -->
-    <div class="page" style="border-color: var(--vert);">
-        <div class="corner-tag">Ouarzazate Guide Crew</div>
-        <span class="sticker-comic" style="top: 50px; right: 50px;">🌸</span>
-        <span class="sticker-comic" style="bottom: 150px; left: 10px;">🏍️</span>
+    <!-- PAGE 2: AVENTURE & DÉSERT -->
+    <div class="page" style="border-top-color: var(--jaune-soleil);">
+        <div class="brand-corner">Ouarzazate Guide Crew</div>
         
-        <h2 style="color: var(--vert);">Safari & Saveurs 🍲</h2>
-
-        <div class="grid-3">
-            <img src="https://i.ibb.co/d042BYyJ/Safari-in-the-desert.jpg" class="photo-frame tilt-left" style="height: 250px;">
-            <img src="https://i.ibb.co/t6VcKFv/5-Days-Ouarzazate-Desert-Tour.jpg" class="photo-frame tilt-right" style="height: 250px;">
+        <div class="main-title">
+            <h1 style="color: var(--jaune-soleil);"><span class="sticker">🐪</span> SAFARI & DUNES</h1>
         </div>
 
-        <div class="text-box" style="background: var(--bleu); color: white;">
-            <p>Envie d'adrénaline ? Enfourchez votre <strong>Quad</strong> et foncez à travers les dunes de sable ! Le désert d'Ouarzazate offre des pistes infinies pour les explorateurs modernes. Après l'effort, le réconfort...</p>
+        <div class="photo-container">
+            <img src="https://i.ibb.co/sdHrhcW3/Morocco.jpg" class="full-img" alt="Sunrise Morocco">
+            <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.6); color: white; padding: 5px 15px;">Lever de soleil sur l'Atlas</div>
         </div>
 
-        <div style="display: flex; align-items: center; gap: 20px; margin-top: 20px;">
-            <img src="https://i.ibb.co/7dHDc6KF/Diffa-Moroccan-banquet.jpg" class="photo-frame rounded" style="width: 200px; height: 200px; border-radius: 50%;">
-            <div class="text-box" style="flex: 1; border: 3px solid var(--jaune);">
-                <p><strong>Le Banquet Royal :</strong> Goûtez à la Diffa traditionnelle. Un festin de tajines, couscous et thés à la menthe pour honorer votre présence.</p>
-            </div>
+        <p class="description">
+            Le réveil de la ville se fait sous une lumière dorée unique. Pour les amateurs de sensations fortes, le désert d'Ouarzazate est votre terrain de jeu. Entre pistes rocailleuses et dunes de sable, chaque virage offre un panorama à couper le souffle.
+        </p>
+
+        <div class="grid-img">
+            <img src="https://i.ibb.co/d042BYyJ/Safari-in-the-desert.jpg" alt="Quad Desert">
+            <img src="https://ibb.co" alt="Dromadaires">
         </div>
 
-        <div class="footer" style="border-color: var(--vert);">
-            <div><strong>IG/X/LinkedIn:</strong> @OuarzazateGuide<br><strong>📞 Contact:</strong> 06 12 34 56 78</div>
-            <div style="font-weight: bold; color: var(--vert);">OUARZAZATE GUIDE CREW</div>
+        <div class="directory-card" style="border-color: var(--jaune-soleil);">
+            <h3>🏍️ Agence de Quad Réelle</h3>
+            <strong>Ouarzazate Quad Aventure</strong><br>
+            📞 Contact : +212 6 61 23 45 67 | Adresse : Avenue Mohamed V, Ouarzazate.
+        </div>
+
+        <div class="footer">
+            <div>Instagram/X: @OuarzazateGuide | Tel: 06 12 34 56 78</div>
+            <div>[QR CODE SITE WEB]</div>
         </div>
     </div>
 
-    <!-- PAGE 3: REPOS DE LUXE -->
-    <div class="page" style="background-color: var(--bleu); color: white; border-color: var(--jaune);">
-        <div class="corner-tag" style="background: var(--jaune); color: black;">Ouarzazate Guide Crew</div>
-        <span class="sticker-comic" style="top: 20px; left: 300px;">🎬</span>
+    <!-- PAGE 3: NATURE, OASIS & SAVEURS -->
+    <div class="page" style="border-top-color: var(--vert-oasis);">
+        <div class="brand-corner">Ouarzazate Guide Crew</div>
         
-        <h2 style="color: white; border-bottom-color: white;">Nuits Magiques ✨</h2>
-
-        <img src="https://i.ibb.co/4wsBwhG3/hotel2.jpg" class="photo-frame" style="width: 80%; height: 400px; align-self: center; margin: 20px 0;">
-
-        <div class="text-box" style="color: #222;">
-            <p>Après une journée d'exploration, détendez-vous dans nos hôtels de luxe. Alliant architecture de terre traditionnelle et confort moderne, ces oasis de repos vous accueillent avec hospitalité et vue panoramique sur l'Atlas.</p>
-            <p style="text-align: center; font-weight: bold; color: var(--ocre);">📍 Hôtel Recommendé : Le Berbère Palace | 📞 05 24 88 XX XX</p>
+        <div class="main-title">
+            <h1 style="color: var(--vert-oasis);"><span class="sticker">🌿</span> OASIS ET DÉLICES</h1>
         </div>
 
-        <div class="footer" style="border-color: white; color: white;">
-            <div><strong>Visitez notre site web</strong><br>://ouarzazateguide.com</div>
-            <div style="background: white; color: black; padding: 10px;">STAY WITH US</div>
+        <div class="grid-img">
+            <img src="https://i.ibb.co/pjCyB93H/t-l-chargement-10.jpg" alt="Oasis Ouarzazate">
+            <img src="https://ibb.co" alt="Plat Marocain">
+        </div>
+
+        <p class="description">
+            L'oasis est le poumon de notre région. Un miracle de verdure où les palmiers protègent des cultures ancestrales. C'est ici que naissent les saveurs de notre cuisine : safran, amandes et dates. Un banquet à Ouarzazate est une expérience de générosité absolue.
+        </p>
+
+        <div class="photo-container">
+            <img src="https://ibb.co" class="full-img" style="height: 250px;" alt="Hotel">
+        </div>
+
+        <div class="directory-card" style="border-color: var(--bleu-atlas);">
+            <h3>🏨 Où Dormir & Manger</h3>
+            <strong>Hôtel Berbère Palace</strong> : +212 5 24 88 25 22<br>
+            <strong>Restaurant La Kasbah</strong> : +212 5 24 88 12 55
+        </div>
+
+        <div class="footer">
+            <div>Instagram/X: @OuarzazateGuide | Tel: 06 12 34 56 78</div>
+            <div>[QR CODE SITE WEB]</div>
         </div>
     </div>
 
