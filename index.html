@@ -2,79 +2,181 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ouarzazate Guide Crew | Officiel 🌵☀️</title>
+    <title>Ouarzazate Guide Crew - Travel Guide</title>
     <style>
-        :root { --ocre: #bc6c25; --safran: #f4a261; --fond: #fefae0; }
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--fond); color: #333; text-align: center; }
-
-        /* Stickers décoratifs */
-        .sticker { position: absolute; font-size: 3rem; z-index: 10; animation: float 5s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        .s1 { top: 5%; left: 5%; } .s2 { top: 35%; right: 5%; }
-
-        header { 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://i.ibb.co/Nd8Rvhf6/kasbah-ouarzazate.jpg');
-            height: 50vh; background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; border-bottom: 8px solid var(--ocre);
+        :root {
+            --ocre: #CC7722;
+            --orange: #E38928;
+            --jaune-dor: #FFD700;
+            --beige: #F5F5DC;
+            --vert-palmier: #38761D;
+            --bleu-ciel: #87CEEB;
+            --text-dark: #333;
         }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 40px 5%; }
-        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border: 1px solid var(--safran); }
-        .card img { width: 100%; height: 220px; object-fit: cover; }
-        .card-body { padding: 20px; text-align: left; }
-        
-        footer { background: var(--ocre); color: white; padding: 50px 20px; }
-        .btn-contact { background: white; color: var(--ocre); padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #555;
+            margin: 0;
+            padding: 20px;
+            color: var(--text-dark);
+        }
+
+        /* Conteneur de page A4 */
+        .page {
+            width: 210mm;
+            height: 297mm;
+            background-color: var(--beige);
+            margin: 0 auto 30px auto;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        /* Couverture */
+        .cover {
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://i.ibb.co/CKVJPx96/A-t-Ben-Haddou-Ouarzazate-Morocco.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .cover h1 { font-size: 4em; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); margin-bottom: 10px; }
+        .cover h2 { font-size: 1.5em; background: var(--ocre); display: inline-block; padding: 10px 20px; }
+
+        /* Headers & Stickers */
+        .page-header { border-bottom: 4px solid var(--ocre); margin-bottom: 20px; }
+        .page-header h2 { color: var(--ocre); font-size: 2.2em; margin: 0; display: flex; align-items: center; }
+        .sticker { font-size: 0.8em; margin-right: 15px; }
+
+        /* Layouts de photos */
+        .photo-main { width: 100%; height: 300px; object-fit: cover; border-radius: 5px; margin: 15px 0; border: 5px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        .photo-tilt { transform: rotate(-2deg); width: 45%; float: right; margin-left: 20px; }
+        .grid-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+        .grid-photos img { width: 100%; height: 200px; object-fit: cover; border: 4px solid white; }
+
+        /* Texte */
+        p { line-height: 1.6; font-size: 1.1em; text-align: justify; }
+
+        /* Footer fixe */
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--ocre);
+            color: white;
+            padding: 15px 40px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8em;
+        }
+
+        .contact-info { display: flex; flex-direction: column; }
+        .qr-placeholder { width: 50px; height: 50px; background: white; color: black; display: flex; align-items: center; text-align: center; font-size: 8px; border-radius: 5px; }
     </style>
 </head>
 <body>
 
-    <div class="sticker s1">🌵</div>
-    <div class="sticker s2">☀️</div>
-
-    <header>
-        <div style="background:var(--ocre); padding:6px 18px; border-radius:50px; font-size:0.8rem; margin-bottom:10px; font-weight:bold; letter-spacing: 1px;">🛡️ OUARZAZATE GUIDE CREW</div>
-        <h1 style="font-size:3.5rem; margin:0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);">Ouarzazate</h1>
-    </header>
-
-    <section>
-        <div class="grid">
-            <!-- CARTE 1 : KASBAH -->
-            <div class="card">
-                <img src="https://i.ibb.co/Nd8Rvhf6/kasbah-ouarzazate.jpg" alt="Kasbah Ouarzazate">
-                <div class="card-body">
-                    <h3 style="color:var(--ocre); margin-top:0;">Héritage 🏰</h3>
-                    <p>Explorez la majestueuse Kasbah de Taourirt avec nos guides locaux passionnés.</p>
-                </div>
+    <!-- PAGE 1: COUVERTURE -->
+    <div class="page cover">
+        <h1>OUARZAZATE</h1>
+        <h2>LE GUIDE COMPLET DU VOYAGEUR</h2>
+        <p style="margin-top: 50px; font-weight: bold; text-shadow: 1px 1px 5px black;">Découvrez la porte du désert et ses trésors cachés</p>
+        
+        <div class="footer">
+            <div class="contact-info">
+                <strong>Ouarzazate Guide Crew</strong>
+                <span>Instagram/X/LinkedIn: @OuarzazateGuide | Tel: 06 12 34 56 78</span>
             </div>
-
-            <!-- CARTE 2 : STUDIO -->
-            <div class="card">
-                <img src="https://i.ibb.co/wFMLx1xq/Atlas-entrance.jpg" alt="Atlas Studios">
-                <div class="card-body">
-                    <h3 style="color:var(--ocre); margin-top:0;">Cinéma 🎬</h3>
-                    <p>Entrez dans les coulisses de vos films préférés aux Studios Atlas.</p>
-                </div>
-            </div>
-
-            <!-- CARTE 3 : PLAT -->
-            <div class="card">
-                <img src="https://i.ibb.co/yFDpbWJr/Moroccan-Tagine.jpg" alt="Tagine Marocain">
-                <div class="card-body">
-                    <h3 style="color:var(--ocre); margin-top:0;">Saveurs 🍲</h3>
-                    <p>Savourez un tajine authentique préparé selon les traditions du désert.</p>
-                </div>
-            </div>
+            <div class="qr-placeholder">SCAN<br>WEB</div>
         </div>
-    </section>
+    </div>
 
-    <footer id="contact">
-        <h2 style="margin-top:0;">Prêt pour l'aventure ? 🐫</h2>
-        <p>Contactez la Crew pour une visite inoubliable.</p>
-        <p>📞 <strong>+212 6 12 34 56 78</strong></p>
-        <a href="https://wa.me" class="btn-contact">Réserver via WhatsApp</a>
-        <p style="font-size: 0.8rem; margin-top: 30px; opacity: 0.8;">© 2026 Ouarzazate Guide Crew - Tous droits réservés</p>
-    </footer>
+    <!-- PAGE 2: HISTOIRE & KASBAHS -->
+    <div class="page">
+        <div class="page-header">
+            <h2><span class="sticker">🏰</span>Les Gardiennes du Temps</h2>
+        </div>
+        
+        <p>Bienvenue à Ouarzazate, une terre où l'histoire s'écrit dans le pisé. Ancienne plaque tournante du commerce caravanier, la ville est célèbre pour ses Kasbahs majestueuses. La Kasbah de Taourirt, autrefois demeure du Glaoui, vous plonge dans un labyrinthe de pièces décorées et de plafonds en cèdre peint.</p>
+        
+        <img src="https://i.ibb.co/1tpHxQ7X/t-l-chargement-5.jpg" class="photo-main" alt="Kasbah">
+
+        <p>Ces structures ne sont pas de simples monuments ; elles sont l'âme des tribus berbères. Leurs murs ocre protégeaient les familles et les richesses contre les tempêtes de sable et les envahisseurs, tout en restant fraîches sous le soleil de plomb du Sud Marocain.</p>
+
+        <div class="footer">
+            <div class="contact-info">
+                <strong>Ouarzazate Guide Crew</strong>
+                <span>Instagram/X/LinkedIn: @OuarzazateGuide | Tel: 06 12 34 56 78</span>
+            </div>
+            <div class="qr-placeholder">SCAN<br>WEB</div>
+        </div>
+    </div>
+
+    <!-- PAGE 3: DÉSERT ET AVENTURE -->
+    <div class="page" style="background-color: #FFF8E7;">
+        <div class="page-header">
+            <h2 style="color: var(--orange);"><span class="sticker">🐪</span>L'Appel des Dunes</h2>
+        </div>
+        
+        <img src="https://i.ibb.co/t6VcKFv/5-Days-Ouarzazate-Desert-Tour.jpg" class="photo-tilt" alt="Désert">
+
+        <p>Quitter Ouarzazate sans s'aventurer dans le désert serait un sacrilège. Que vous choisissiez le quad pour l'adrénaline ou une caravane de dromadaires pour la sérénité, le Sahara vous transforme. Les dunes de Tinfou ou l'immensité de l'Erg Chegaga vous attendent pour des nuits étoilées inoubliables.</p>
+        
+        <div style="clear: both; margin-top: 30px;">
+            <h3 style="color: var(--vert-palmier);">Conseils d'expert :</h3>
+            <ul style="color: var(--text-dark); border-left: 3px solid var(--jaune-dor); padding-left: 20px;">
+                <li>Prévoyez des vêtements amples et de l'eau en abondance.</li>
+                <li>Le meilleur moment : Octobre à Avril.</li>
+                <li>Contact : <strong>Ouarzazate Desert Tours</strong> (+212 5 24 88 XX XX)</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <div class="contact-info">
+                <strong>Ouarzazate Guide Crew</strong>
+                <span>Instagram/X/LinkedIn: @OuarzazateGuide | Tel: 06 12 34 56 78</span>
+            </div>
+            <div class="qr-placeholder">SCAN<br>WEB</div>
+        </div>
+    </div>
+
+    <!-- PAGE 4: GASTRONOMIE -->
+    <div class="page">
+        <div class="page-header">
+            <h2 style="color: var(--ocre);"><span class="sticker">🍲</span>Saveurs Authentiques</h2>
+        </div>
+        
+        <div class="grid-photos">
+            <img src="https://i.ibb.co/7dHDc6KF/Diffa-Moroccan-banquet.jpg" alt="Plat Marocain">
+            <img src="https://i.ibb.co/4wsBwhG3/hotel2.jpg" alt="Restaurant">
+        </div>
+
+        <p>La cuisine à Ouarzazate est une fête pour les sens. Goûtez au Tajine de dromadaire aux pruneaux ou à la soupe Harira traditionnelle servie sur les terrasses surplombant la ville. Chaque plat raconte une histoire de générosité et de partage, assaisonnée de safran local et de cumin du désert.</p>
+
+        <div style="background: white; padding: 15px; border-radius: 10px; margin-top: 20px;">
+            <p><strong>📍 Adresse Recommandée :</strong> Restaurant La Kasbah, Face à la Kasbah Taourirt. <br>
+            <strong>📞 Réservation :</strong> 05 24 88 12 34 <br>
+            <em>Le plus : Leur thé à la menthe est considéré comme le meilleur de la région !</em></p>
+        </div>
+
+        <div class="footer">
+            <div class="contact-info">
+                <strong>Ouarzazate Guide Crew</strong>
+                <span>Instagram/X/LinkedIn: @OuarzazateGuide | Tel: 06 12 34 56 78</span>
+            </div>
+            <div class="qr-placeholder">SCAN<br>WEB</div>
+        </div>
+    </div>
 
 </body>
 </html>
